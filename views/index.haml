@@ -21,4 +21,4 @@
         %input{:type => "textarea", :name => "text", :size => 40}
       %p
         %input{:type => "submit"}
-      %div= "#{@text}（#{@kana}）: #{@message}"
+      %div= @text.empty? ? "なにか書いて... ;_;" : "#{@text}（#{@kana}）: #{@message}"

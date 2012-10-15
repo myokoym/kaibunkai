@@ -41,6 +41,12 @@ describe "kaibun-web" do
       last_response.ok? == true
       last_response.body.to_s.should =~ /竹藪焼けない（たけやぶやけない）: 違う/
     end
+
+    it "empty" do
+      post '/check', {"text" => ""}
+      last_response.ok? == true
+      last_response.body.to_s.should =~ /なにか書いて... ;_;/
+    end
   end
 end
 
