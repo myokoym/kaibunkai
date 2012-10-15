@@ -10,8 +10,9 @@ get "/" do
 end
 
 post "/check" do
-  kana = reading(params['text'])
-  @message = "#{kana}: #{kaibun?(kana) ? '回文' : '違う'}"
+  @text = params['text']
+  @kana = reading(@text)
+  @message = kaibun?(@kana) ? '回文' : '違う'
   haml :index
 end
 
