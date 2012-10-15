@@ -30,6 +30,12 @@ describe "kaibun-web" do
       last_response.body.to_s.should =~ /たけやぶやけた: 回文/
     end
 
+    it "タケヤブヤケタ" do
+      post '/check', {"text" => "タケヤブヤケタ"}
+      last_response.ok? == true
+      last_response.body.to_s.should =~ /たけやぶやけた: 回文/
+    end
+
     it "竹藪焼けない" do
       post '/check', {"text" => "竹藪焼けない"}
       last_response.ok? == true

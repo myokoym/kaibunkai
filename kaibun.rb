@@ -21,12 +21,17 @@ end
 
 private
 def reading(text)
-  kana = ""
+  kanas = ""
   MeCab::Tagger.new.parseToNode(text).each do |node|
     next if node.surface.empty?
-    kana << node.feature.split(/,/)[8]
+    kana = node.feature.split(/,/)[8]
+    if kana
+      kanas << kana
+    else
+      kanas << node.surface
+    end
   end
-  hiragana(kana)
+  hiragana(kanas)
 end
 
 def hiragana(text)
