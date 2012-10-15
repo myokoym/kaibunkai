@@ -45,7 +45,6 @@ describe "kaibun-web" do
     it "empty" do
       post '/check', {"text" => ""}
       last_response.ok? == true
-      last_response.body.to_s.should =~ /なにか書いて... ;_;/
     end
   end
 end
