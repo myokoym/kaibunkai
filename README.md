@@ -4,7 +4,7 @@ Palindrome checker in Japanese.
 
 ## Usage
 
-http://myokoym.net/kaibun/
+http://myokoym.net/kaibunkai/
 
 ## Contributing
 
