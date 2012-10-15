@@ -1,0 +1,24 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'content-style-type', :content => 'text/css'}
+    %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
+    %title 回文かい？
+  %body
+    %h1 回文かい？
+    Powered by
+    %a{:href => "http://www.ruby-lang.org/ja/"} Ruby
+    ,
+    %a{:href => "http://www.sinatrarb.com/intro-jp.html"} Sinatra
+    ,
+    %a{:href => "http://haml-lang.com/"} Haml
+    ,
+    %a{:href => "http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html"} MeCab
+    %form{:action => url("/check", false, true), :method => "post"}
+      %p
+        %input{:type => "textarea", :name => "text", :size => 40}
+      %p
+        %input{:type => "submit"}
+      %div= @message
