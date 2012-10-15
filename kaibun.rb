@@ -15,10 +15,6 @@ post "/check" do
   haml :index
 end
 
-get "/check/:text" do
-  kaibun?(reading(text))
-end
-
 private
 def reading(text)
   kanas = ""
